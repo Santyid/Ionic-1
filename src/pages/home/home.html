@@ -1,14 +1,239 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar no-border-bottom>
+        <ion-icon name="logo-twitter" item-start></ion-icon>
+      <ion-title>
+        Social Media
+      </ion-title>      
+    </ion-navbar>   
+  </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+
+  <ion-content>  
+    <div padding>
+        <ion-segment [(ngModel)]="status">
+          <ion-segment-button value="Inicio">
+            Start
+          </ion-segment-button>
+          <ion-segment-button value="Notificaciones">
+            News
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+      <div [ngSwitch]="status">
+          <ion-list *ngSwitchCase="'Inicio'">
+              <ion-card>
+                  <img src="assets/imgs/nin-live.png"/>
+                  <ion-item>
+                  <h2>Santiago Idarraga</h2>
+                  <p>January 2 2018</p>
+                  </ion-item>
+                
+                  <ion-card-content>
+                  <p>Good morning.</p>
+                  </ion-card-content>
+                
+                  <ion-row>
+                      <ion-col>
+                          <button ion-button icon-left clear small (click)="showAlert1()">
+                            <ion-icon name="return-left"></ion-icon>
+                            <div>Respond</div>
+                          </button>
+                        </ion-col>
+                    <ion-col>
+                      <button  ion-button icon-left clear small (click)="showAlert()">
+                        <ion-icon name="star"></ion-icon>
+                        <div>Likes</div>
+                       </button>
+                    </ion-col>      
+                      <ion-col center text-center>
+                      <ion-note>              
+                      </ion-note>
+                    </ion-col>2h ago
+                  </ion-row>                
+                </ion-card>
+                                  
+                  <ion-card>
+                        <img src="assets/imgs/martin.jpg"/>
+                        <ion-item>
+                        <h2>Martin Mc</h2>
+                        <p>November 18 2018</p>
+                        </ion-item>
+                      
+                        <ion-card-content>
+                        <p> Heyyy docc wait</p>
+                        </ion-card-content>
+                      
+                        <ion-row>
+                            <ion-col>
+                                <button ion-button icon-left clear small (click)="showAlert1()">
+                                  <ion-icon name="return-left"></ion-icon>
+                                  <div>Respond</div>
+                                </button>
+                              </ion-col>
+                          <ion-col>
+                            <button  ion-button icon-left clear small (click)="showAlert()">
+                              <ion-icon name="star"></ion-icon>
+                              <div>Likes</div>
+                             </button>
+                          </ion-col>      
+                            <ion-col center text-center>
+                            <ion-note>              
+                            </ion-note>
+                          </ion-col>10h ago
+                        </ion-row>
+                      </ion-card>
+          
+                      <ion-card>
+                          <img src="assets/imgs/mont.png"/>
+                          <ion-item>
+                          <h2>Juan Montoya</h2>
+                          <p>June 8 2017</p>
+                          </ion-item>
+                        
+                          <ion-card-content>
+                          <p> Ohhhh amazing!!</p>
+                          </ion-card-content>
+                        
+                          <ion-row>
+                              <ion-col>
+                                  <button ion-button icon-left clear small (click)="showAlert1()">
+                                    <ion-icon name="return-left"></ion-icon>
+                                    <div>Respond</div>
+                                  </button>
+                                </ion-col>
+                            <ion-col>
+                              <button  ion-button icon-left clear small (click)="showAlert()">
+                                <ion-icon name="star"></ion-icon>
+                                <div>Likes</div>
+                               </button>
+                            </ion-col>      
+                              <ion-col center text-center>
+                              <ion-note>              
+                              </ion-note>
+                            </ion-col>12h ago
+                          </ion-row>
+                        </ion-card>
+ 
+                                
+          </ion-list>
+
+        
+          <ion-list *ngSwitchCase="'Notificaciones'">
+              <ion-card>
+                  <img src="assets/imgs/forest.jpg"/>
+                  <ion-item>
+                  <h2>Forrest Gump</h2>
+                  <p>November 5 2018</p>
+                  </ion-item>
+                
+                  <ion-card-content>
+                  <p> Are you telling me that you built a time machine...</p>
+                  </ion-card-content>
+                
+                  <ion-row>
+                      <ion-col>
+                          <button ion-button icon-left clear small (click)="showAlert1()">
+                            <ion-icon name="return-left"></ion-icon>
+                            <div>Respond</div>
+                          </button>
+                        </ion-col>
+                    <ion-col>
+                      <button  ion-button icon-left clear small (click)="showAlert()">
+                        <ion-icon name="star"></ion-icon>
+                        <div>Likes</div>
+                       </button>
+                    </ion-col>      
+                      <ion-col center text-center>
+                      <ion-note>              
+                      </ion-note>
+                    </ion-col>5h ago
+                  </ion-row>
+              </ion-card>
+    
+                <ion-card>
+                    <img src="assets/imgs/bro.jpg"/>
+                    <ion-item>
+                    <h2>Melodias</h2>
+                    <p>November 15 2018</p>
+                    </ion-item>
+                  
+                    <ion-card-content>
+                    <p> Hey brother, are you?</p>
+                    </ion-card-content>
+                  
+                    <ion-row>
+                        <ion-col>                          
+                            <button ion-button icon-left clear small (click)="showAlert1()" >
+                              <ion-icon name="return-left"></ion-icon>
+                              <div>Respond</div>
+                            </button>
+                        </ion-col>
+                      <ion-col>
+                        <button  ion-button icon-left clear small (click)="showAlert()">
+                          <ion-icon name="star"></ion-icon>
+                          <div>Likes</div>
+                         </button>
+                      </ion-col>      
+                        <ion-col center text-center>
+                        <ion-note>              
+                        </ion-note>
+                      </ion-col>10h ago
+                    </ion-row>
+                  </ion-card>
+
+
+                  <ion-card>
+                      <img src="assets/imgs/ju.jpg"/>
+                      <ion-item>
+                      <h2>Japan</h2>
+                      <p>July 10 2018</p>
+                      </ion-item>
+                    
+                      <ion-card-content>
+                      <p> That's grea</p>
+                      </ion-card-content>
+                    
+                      <ion-row>
+                          <ion-col>                         
+                            <button ion-button icon-left clear small (click)="showAlert1()" >
+                                <ion-icon name="return-left"></ion-icon>
+                                <div>Respond</div>
+                              </button>
+                            </ion-col>
+                        <ion-col>
+                          <button  ion-button icon-left clear small (click)="showAlert()">
+                            <ion-icon name="star"></ion-icon>
+                            <div>Likes</div>
+                           </button>
+                        </ion-col>      
+                          <ion-col center text-center>
+                          <ion-note>              
+                          </ion-note>
+                        </ion-col>15h ago
+                      </ion-row>
+                    </ion-card>
+
+            
+          </ion-list>
+
+
+      </div>
+
+      
+
+  </ion-content>
+
+ 
+  <ion-footer>
+      <ion-toolbar>
+          <h4>Hello User</h4>
+          <ion-buttons end>
+            <button ion-button icon-right color="royal" >
+             ¿You want write?
+              <ion-icon name="send"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+    </ion-footer>
+
